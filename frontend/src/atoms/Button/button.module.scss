@@ -1,0 +1,72 @@
+@mixin button-color-set($border, $bcg, $text) {
+  border: 1px solid $border;
+  background-color: $bcg;
+  color: $text;
+}
+
+a.button {
+  text-decoration: none;
+  width: max-content;
+}
+
+.button {
+  display: block;
+  line-height: 1;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0 5px;
+  &:focus {
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.button {
+  padding: 8px 30px;
+  &-small {
+    min-width: 20px;
+    min-height: 20px;
+    padding: 4px 7px;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+  }
+}
+
+.button {
+  &-outline {
+    @include button-color-set(
+      var(--color-white),
+      transparent,
+      var(--color-white)
+    );
+    &:hover {
+      @include button-color-set(
+        var(--color-white),
+        transparent,
+        var(--color-white)
+      );
+    }
+    &.disabled {
+      @include button-color-set(#d5d5d5, transparent, #d5d5d5);
+    }
+  }
+
+  &-blue {
+    @include button-color-set(
+      var(--color-blue),
+      var(--color-blue),
+      var(--color-white)
+    );
+    &:hover {
+      @include button-color-set(
+        var(--color-blue),
+        var(--color-blue),
+        var(--color-white)
+      );
+    }
+    &.disabled {
+      opacity: 0.4;
+      @include button-color-set(#d5d5d5, transparent, #d5d5d5);
+    }
+  }
+}

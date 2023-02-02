@@ -1,0 +1,51 @@
+@import "../../assets/styles/variables.module.scss";
+
+.text {
+  font-size: var(--font-size-m);
+  color: var(--font-color-white);
+  font-weight: var(--font-weight-semi-bold);
+
+  &-blue {
+    color: var(--font-color-blue);
+  }
+
+  &-xs {
+    font-size: var(--font-size-xxs);
+  }
+  &-s {
+    font-size: var(--font-size-s);
+  }
+  &-l {
+    font-size: var(--font-size-l);
+  }
+  &-xl {
+    font-size: var(--font-size-xl);
+  }
+  &-xxl {
+    font-size: var(--font-size-xxl);
+  }
+  &-special-small {
+    font-size: var(--font-size-special-small);
+  }
+  &-special-medium {
+    font-size: var(--font-size-special-medium);
+  }
+  &-special-big {
+    font-size: var(--font-size-special-big);
+  }
+  &-special-large {
+    font-size: var(--font-size-special-large);
+  }
+  &-semi-bold {
+    font-weight: var(--font-weight-semi-bold);
+  }
+  &-regular {
+    font-weight: var(--font-weight-regular);
+  }
+  &-medium {
+    font-weight: var(--font-weight-medium);
+  }
+  &-bold {
+    font-weight: var(--font-weight-bold);
+  }
+}
