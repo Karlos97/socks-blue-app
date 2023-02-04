@@ -1,6 +1,13 @@
 .icon {
   margin: 0 5px;
-  width: 32px;
   height: 32px;
+  width: auto;
   fill: inherit;
+
+  &-medium {
+    height: 50px;
+  }
+  &-big {
+    height: 75px;
+  }
 }

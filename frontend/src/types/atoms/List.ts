@@ -1,4 +1,4 @@
-import { textSizeMap, textWeightMap } from "../../helpers/constants";
+import { textSizeMap, textWeightMap } from "../../helpers/atomConstants";
 
 export interface ListItemProps {
   children: React.ReactNode;
@@ -8,6 +8,7 @@ export interface ListItemProps {
 
 export interface ListProps {
   items: string[];
+  className?: string;
   size?: keyof typeof textSizeMap;
   weight?: keyof typeof textWeightMap;
 }

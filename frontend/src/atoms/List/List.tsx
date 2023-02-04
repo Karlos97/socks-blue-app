@@ -1,5 +1,5 @@
-import { ListItemProps, ListProps } from "../../types/atoms/List";
-import { Text } from "../Text/Text";
+import { ListItemProps, ListProps } from "src/types/atoms/List";
+import Text from "src/atoms/Text/Text";
 import classes from "./list.module.scss";
 
 const ListItem = ({ children, size, weight }: ListItemProps) => (
@@ -10,8 +10,13 @@ const ListItem = ({ children, size, weight }: ListItemProps) => (
   </li>
 );
 
-const List = ({ items = [], size = "m", weight = "semi" }: ListProps) => (
-  <ul className={classes.list}>
+const List = ({
+  items = [],
+  size = "m",
+  weight = "semi",
+  className,
+}: ListProps) => (
+  <ul className={className}>
     {items?.map((text: string) => (
       <ListItem size={size} weight={weight}>
         {text}

@@ -1,3 +1,18 @@
+export const justifyContentMap = {
+  none: "",
+  start: "start",
+  center: "center",
+  end: "end",
+};
+
+export const alignItemsMap = {
+  none: "",
+  start: "start",
+  center: "center",
+  end: "end",
+  baseline: "baseline",
+};
+
 export const textSizeMap = {
   xs: "xs",
   s: "s",
@@ -21,11 +36,11 @@ export const textWeightMap = {
 export const textTypeMap = {
   default: "",
   blue: "blue",
+  gray: "gray",
 };
 
 export const iconSizeMap = {
   small: "small",
   medium: "medium",
   big: "big",
-  large: "large",
 };

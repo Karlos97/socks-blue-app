@@ -1,11 +1,17 @@
 import IcoMoon from "icomoon-react";
-import iconSet from "../../assets/icomoon/selection.json";
-import { IconProps } from "../../types/atoms/icon";
+import iconSet from "src/assets/icomoon/selection.json";
+import { iconSizeMap } from "src/helpers/atomConstants";
+import { classnames } from "src/helpers/classnames";
+import { IconProps } from "src/types/atoms/icon";
 import classes from "./Icon.module.scss";
 
-const Icon = ({ classname, icon }: IconProps) => (
+const Icon = ({ className = "", icon, size = "small" }: IconProps) => (
   <IcoMoon
-    className={classname ? classname : classes.icon}
+    className={classnames({
+      [classes.icon]: true,
+      [classes[`icon-${iconSizeMap[size]}`]]: className !== "small",
+      [className]: className !== "",
+    })}
     iconSet={iconSet}
     icon={icon}
   />

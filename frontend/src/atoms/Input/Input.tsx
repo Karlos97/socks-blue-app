@@ -1,5 +1,5 @@
-import { classnames } from "../../helpers/classnames";
-import { InputProps } from "../../types/atoms/input";
+import { classnames } from "src/helpers/classnames";
+import { InputProps } from "src/types/atoms/input";
 import classes from "./input.module.scss";
 
 const Input = ({

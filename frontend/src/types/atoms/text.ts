@@ -2,7 +2,7 @@ import {
   textSizeMap,
   textTypeMap,
   textWeightMap,
-} from "../../helpers/constants";
+} from "../../helpers/atomConstants";
 
 export interface TextProps {
   size?: keyof typeof textSizeMap;

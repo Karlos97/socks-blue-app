@@ -1,4 +1,4 @@
-import { Text } from "../../../atoms/Text/Text";
+import Text from "src/atoms/Text/Text";
 import classes from "./footer.module.scss";
 
 const Footer = () => (

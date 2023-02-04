@@ -1,51 +1,37 @@
-@import "../../assets/styles/variables.module.scss";
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background-color-darker);
+  height: 10rem;
+  margin: 0 20%;
+  position: fixed;
+  z-index: 50;
+  inset: 0 0;
+  &-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    .nav-button {
+      position: relative;
+      cursor: pointer;
 
-.text {
-  font-size: var(--font-size-m);
-  color: var(--font-color-white);
-  font-weight: var(--font-weight-semi-bold);
-
-  &-blue {
-    color: var(--font-color-blue);
-  }
-
-  &-xs {
-    font-size: var(--font-size-xxs);
-  }
-  &-s {
-    font-size: var(--font-size-s);
-  }
-  &-l {
-    font-size: var(--font-size-l);
-  }
-  &-xl {
-    font-size: var(--font-size-xl);
-  }
-  &-xxl {
-    font-size: var(--font-size-xxl);
-  }
-  &-special-small {
-    font-size: var(--font-size-special-small);
-  }
-  &-special-medium {
-    font-size: var(--font-size-special-medium);
-  }
-  &-special-big {
-    font-size: var(--font-size-special-big);
-  }
-  &-special-large {
-    font-size: var(--font-size-special-large);
-  }
-  &-semi-bold {
-    font-weight: var(--font-weight-semi-bold);
-  }
-  &-regular {
-    font-weight: var(--font-weight-regular);
-  }
-  &-medium {
-    font-weight: var(--font-weight-medium);
-  }
-  &-bold {
-    font-weight: var(--font-weight-bold);
+      &:before {
+        transition: all 0.3s ease-in-out;
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: calc(50% - 1px);
+        left: -12px;
+        width: 0;
+        border-bottom: 2px solid var(--color-blue);
+      }
+      &:hover::before {
+        width: calc(100% + 24px);
+      }
+      &:active {
+        color: var(--color-blue);
+      }
+    }
   }
 }

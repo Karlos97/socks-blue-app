@@ -1,4 +1,4 @@
-import { LabelProps } from "../../types/atoms/label";
+import { LabelProps } from "src/types/atoms/label";
 import classes from "./label.module.scss";
 
 const Label = ({ htmlFor = "", children, className = "" }: LabelProps) =>

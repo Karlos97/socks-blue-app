@@ -1,0 +1,21 @@
+.qualifications {
+  height: 80vh;
+  padding: 10rem;
+  background-color: var(--background-color-darker);
+
+  &-card {
+    width: 40rem;
+    padding: 4.5rem;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+
+    margin: 0 2rem 1.5rem 0;
+    hyphens: auto;
+    &-icon {
+      margin: 0 30px 30px 0;
+    }
+
+    &-header {
+      margin-bottom: 10px;
+    }
+  }
+}

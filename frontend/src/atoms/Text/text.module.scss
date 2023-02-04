@@ -1,12 +1,14 @@
-@import "../../assets/styles/variables.module.scss";
-
 .text {
   font-size: var(--font-size-m);
-  color: var(--font-color-white);
+  color: var(--color-white);
   font-weight: var(--font-weight-semi-bold);
+  margin: 0;
 
   &-blue {
-    color: var(--font-color-blue);
+    color: var(--color-blue);
+  }
+  &-gray {
+    color: var(--color-gray);
   }
 
   &-xs {

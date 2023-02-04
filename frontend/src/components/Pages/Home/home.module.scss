@@ -1,0 +1,28 @@
+.home {
+  height: 100vh;
+  padding: 0 20%;
+  position: relative;
+  &-bg {
+    position: absolute;
+    inset: 0 0;
+    background-image: url(../../../../src/assets/images/home-bg.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: var(--background-color-darker);
+    height: inherit;
+    z-index: -1;
+  }
+  &-intro {
+    padding-top: 33rem;
+    .hello {
+      margin-bottom: 15px;
+    }
+  }
+  .text-blue {
+    margin: 0 10px;
+    color: var(--color-blue);
+  }
+  .list {
+    padding: 3rem 0 0 0;
+  }
+}

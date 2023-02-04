@@ -1,10 +1,10 @@
-import { classnames } from "../../helpers/classnames";
+import { classnames } from "src/helpers/classnames";
 import {
   textSizeMap,
   textTypeMap,
   textWeightMap,
-} from "../../helpers/constants";
-import { TextProps } from "../../types/atoms/text";
+} from "src/helpers/atomConstants";
+import { TextProps } from "src/types/atoms/text";
 import classes from "./text.module.scss";
 
 const Text = ({
@@ -20,16 +20,13 @@ const Text = ({
       [classes.text]: true,
       [classes[`text-${textSizeMap[size]}`]]: true,
       [classes[`text-${textWeightMap[weight]}`]]: true,
-      [classes[`text-${textTypeMap[type]}`]]: true,
+      [classes[`text-${textTypeMap[type]}`]]: type !== "default",
       [className]: className.length > 0,
     })}
     onClick={onClick}
   >
-    <>
-      {console.log(classes[`text-${textWeightMap[weight]}`])}
-      {children}
-    </>
+    {children}
   </p>
 );
 
-export { Text };
+export default Text;

@@ -1,4 +1,7 @@
+import { iconSizeMap } from "../../helpers/atomConstants";
+
 export interface IconProps {
-  classname?: string;
+  className?: string;
   icon: string;
+  size?: keyof typeof iconSizeMap;
 }
