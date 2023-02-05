@@ -17,6 +17,9 @@
   &-s {
     font-size: var(--font-size-s);
   }
+  &-m {
+    line-height: 1.6;
+  }
   &-l {
     font-size: var(--font-size-l);
   }
@@ -26,17 +29,19 @@
   &-xxl {
     font-size: var(--font-size-xxl);
   }
-  &-special-small {
-    font-size: var(--font-size-special-small);
-  }
-  &-special-medium {
-    font-size: var(--font-size-special-medium);
-  }
-  &-special-big {
-    font-size: var(--font-size-special-big);
-  }
-  &-special-large {
-    font-size: var(--font-size-special-large);
+  &-special {
+    &-small {
+      font-size: var(--font-size-special-small);
+    }
+    &-medium {
+      font-size: var(--font-size-special-medium);
+    }
+    &-big {
+      font-size: var(--font-size-special-big);
+    }
+    &-large {
+      font-size: var(--font-size-special-large);
+    }
   }
   &-semi-bold {
     font-weight: var(--font-weight-semi-bold);

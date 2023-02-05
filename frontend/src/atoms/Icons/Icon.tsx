@@ -3,7 +3,7 @@ import iconSet from "src/assets/icomoon/selection.json";
 import { iconSizeMap } from "src/helpers/atomConstants";
 import { classnames } from "src/helpers/classnames";
 import { IconProps } from "src/types/atoms/icon";
-import classes from "./Icon.module.scss";
+import classes from "./icon.module.scss";
 
 const Icon = ({ className = "", icon, size = "small" }: IconProps) => (
   <IcoMoon

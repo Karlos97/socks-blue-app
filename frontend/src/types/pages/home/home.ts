@@ -3,6 +3,10 @@ export interface SubSectionHeaderProps {
   headerBottom: string;
   description: string;
 }
+export interface SubSectionHeaderTopProps {
+  headerTop: string;
+  headerBottom: string;
+}
 export interface AboutCardProps {
   icon: string;
   header: string;

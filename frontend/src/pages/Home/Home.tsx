@@ -1,13 +1,13 @@
 import { List } from "src/atoms/List/List";
 import Text from "src/atoms/Text/Text";
-import About from "./About/About";
+import About from "src/pages/Home/About/About";
 import classes from "./home.module.scss";
-import Qualifications from "./Qualifications/Qualifications";
+import Qualifications from "src/pages/Home/Qualifications/Qualifications";
 
 const Home = () => {
   return (
     <>
-      <section id="home" className={classes.home}>
+      <section className={classes.home}>
         <div className={classes["home-bg"]} />
         <div className={classes["home-intro"]}>
           <Text size="xxl" weight="semi" className={classes["hello"]}>
