@@ -1,0 +1,46 @@
+@import "../../assets/styles/mixins.module.scss";
+
+.comments {
+  padding: 5rem 55rem 10rem 55rem;
+  background-color: var(--background-color-darkest);
+
+  @include respond(desktop) {
+    padding: 5rem 40rem 10rem 40rem;
+  }
+
+  @include respond(tab-land) {
+    padding: 5rem 20rem 10rem 20rem;
+  }
+
+  @include respond(tab-port) {
+    padding: 5rem 20rem 10rem 20rem;
+  }
+
+  @include respond(phone) {
+    padding: 3rem 5rem 10rem 3rem;
+  }
+
+  .filter {
+    margin: 0 10px;
+  }
+
+  .comment {
+    margin-top: 5rem;
+
+    &-name {
+      margin-top: 5px;
+      &-paragraph {
+        margin: 0 3px 10px 0;
+      }
+    }
+  }
+  .pages {
+    margin-top: 5rem;
+    & button:first-child {
+      margin-left: 0;
+    }
+    &-counter {
+      margin-left: 5px;
+    }
+  }
+}

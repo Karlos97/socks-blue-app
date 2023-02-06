@@ -1,0 +1,72 @@
+@import "../../../../assets/styles/mixins.module.scss";
+
+.header-visibility {
+  height: 10rem;
+  display: none;
+  background-color: var(--background-color-darkest);
+
+  @include respond(phone) {
+    display: block;
+  }
+  .hidden {
+    display: none;
+  }
+}
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    -45deg,
+    var(--color-white) 0%,
+    var(--background-color-darkest) 100%
+  );
+  clip-path: circle(0 at calc(100% - 45px) 35px);
+  transition: all 0.3s ease-in-out;
+  z-index: 99;
+}
+
+#menu-btn:checked ~ .wrapper {
+  clip-path: circle(100%);
+}
+
+.menu-btn {
+  position: absolute;
+  z-index: 100;
+  right: 35px;
+  top: 35px;
+  transition: all 0.3s ease-in-out;
+  fill: var(--color-white);
+}
+
+.wrapper .menu-options {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+.wrapper .menu-options li {
+  margin: 15px 0;
+}
+.wrapper .menu-options li a {
+  color: none;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+@keyframes rotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}

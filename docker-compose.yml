@@ -9,8 +9,9 @@ services:
       - "443:443"
     links:
       - frontend
+      - backend
     environment:
-      DOMAINS: "socks-market.pl -> http://frontend:${FRONTEND_PORT}"
+      DOMAINS: "softblue.karlos97.pl -> http://frontend:${FRONTEND_PORT}, api.softblue.karlos97.pl -> http://backend:${BACKEND_PORT}"
       # STAGE: "production"
       # FORCE_RENEW: "true"
 
@@ -29,6 +30,22 @@ services:
     ports:
       - "${FRONTEND_PORT}:${FRONTEND_PORT}"
     restart: always
-
+  backend:
+    container_name: backend
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+      args:
+        - PORT=${BACKEND_PORT}
+        - DOMAIN=${BACKEND_CORS_DOMAINS}
+        - MONGODB_URL=${MONGODB_URL}
+        - MONGODB_NAME=${MONGODB_NAME}
+    # depends_on:
+    #   - socks-market-mongo
+    volumes:
+      - "/home/chrum/Desktop/soft-blue/backend/acces.log:/backend/acces.log"
+    ports:
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
+    restart: always
 volumes:
   https-portal-data: # Recommended, to avoid re-signing when upgrading HTTPS-PORTAL

@@ -3,6 +3,7 @@ export const justifyContentMap = {
   start: "start",
   center: "center",
   end: "end",
+  space: "space-between",
 };
 
 export const alignItemsMap = {
@@ -43,4 +44,5 @@ export const iconSizeMap = {
   small: "small",
   medium: "medium",
   big: "big",
+  logo: "logo",
 };

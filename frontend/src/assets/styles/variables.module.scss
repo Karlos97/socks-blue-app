@@ -1,9 +1,13 @@
+@import "./mixins.module.scss";
+
 :root {
-  --background-color-dark: rgb(8, 20, 32);
-  --background-color-darker: rgb(6, 16, 26);
-  --background-color-darkest: rgb(5, 13, 22);
+  --background-color-dark: #081420;
+  --background-color-darker: #06101a;
+  --background-color-darkest: #050d16;
   --color-white: #fafafa;
+  --color-red: #b62e2e;
   --color-blue: #00bcd4;
+  --color-dark: #041f2a;
   --color-gray: #777777;
   --font-size-xs: 12px;
   --font-size-s: 14px;
@@ -19,4 +23,22 @@
   --font-weight-regular: 500;
   --font-weight-medium: 600;
   --font-weight-bold: 700;
+
+  --global-section-padding: 0 38rem;
+
+  @include respond(desktop) {
+    --global-section-padding: 0 28rem;
+  }
+
+  @include respond(tab-land) {
+    --global-section-padding: 0 13rem;
+  }
+
+  @include respond(tab-port) {
+    --global-section-padding: 0 1rem;
+  }
+
+  @include respond(phone) {
+    --global-section-padding: 0 3rem;
+  }
 }

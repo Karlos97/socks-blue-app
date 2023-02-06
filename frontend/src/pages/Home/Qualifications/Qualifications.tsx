@@ -13,7 +13,7 @@ const Qualifications = () => {
         The point of using Lorem Ipsum is that it has"
       />
 
-      <Wrapper justify="center">
+      <Wrapper justify="center" className={classes["card-wrapper"]}>
         <QualificationsCard
           icon="be"
           name="Behancer"
@@ -29,7 +29,7 @@ const Qualifications = () => {
           description="There are many variations of passages of Lorem Ipsum ailable, but the jority have sufferedThere are many variations of passages of Lorem"
         />
       </Wrapper>
-      <Wrapper justify="center">
+      <Wrapper justify="center" className={classes["card-wrapper"]}>
         <QualificationsCard
           icon="be"
           name="Themforest"

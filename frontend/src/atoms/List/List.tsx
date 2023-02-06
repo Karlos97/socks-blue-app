@@ -17,8 +17,8 @@ const List = ({
   className,
 }: ListProps) => (
   <ul className={className}>
-    {items?.map((text: string) => (
-      <ListItem size={size} weight={weight}>
+    {items?.map((text: string, index: number) => (
+      <ListItem key={`list-item${text}-${index}`} size={size} weight={weight}>
         {text}
       </ListItem>
     ))}

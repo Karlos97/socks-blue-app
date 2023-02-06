@@ -1,13 +1,29 @@
 .icon {
   margin: 0 5px;
   height: 32px;
+  min-height: 32px;
+  min-width: 32px;
+  max-width: 32px;
   width: auto;
   fill: inherit;
 
   &-medium {
     height: 50px;
+    min-height: 50px;
+    min-width: 50px;
+    max-height: 50px;
   }
   &-big {
     height: 75px;
+    min-height: 75px;
+    min-width: 75px;
+    max-height: 75px;
+  }
+
+  &-logo {
+    height: 100px;
+    min-height: 100px;
+    min-width: 100px;
+    max-height: 100px;
   }
 }

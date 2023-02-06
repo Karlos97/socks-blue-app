@@ -1,23 +1,27 @@
 import Button from "src/atoms/Button/Button";
 import Icon from "src/atoms/Icons/Icon";
-import Text from "src/atoms/Text/Text";
+import Wrapper from "src/atoms/Wrapper/Wrapper";
+import PhoneHeader from "./PhoneHeader/PhoneHeader";
 import classes from "./header.module.scss";
-const Header = () => (
-  <div className={classes.header}>
-    <Icon icon="logo" />
-    <nav className={classes["header-nav"]}>
-      <a className={classes["nav-button"]}>
-        <Text size="xl">Home</Text>
-      </a>
-      <a className={classes["nav-button"]}>
-        <Text size="xl">Services</Text>
-      </a>
-      <a className={classes["nav-button"]}>
-        <Text size="xl">Experience</Text>
-      </a>
-      <Button variant="blue">Comments</Button>
-    </nav>
+import HeaderNavButton from "./HeaderNavButton";
+
+const Header = ({ scrollToBottom }: { scrollToBottom: () => void }) => (
+  <div className={classes["header-wrapper"]}>
+    <PhoneHeader scrollToBottom={scrollToBottom} />
+    <div className={classes.header}>
+      <Icon icon="logo" size="logo" />
+      <nav className={classes["header-nav"]}>
+        <Wrapper justify="space" align="center">
+          <HeaderNavButton path="/">Home</HeaderNavButton>
+          <HeaderNavButton path="/experience">Experience</HeaderNavButton>
+          <HeaderNavButton path="/services">Services</HeaderNavButton>
+          <Button variant="blue" onClick={() => scrollToBottom()}>
+            Comments
+          </Button>
+        </Wrapper>
+      </nav>
+    </div>
   </div>
 );
 
-export { Header };
+export default Header;

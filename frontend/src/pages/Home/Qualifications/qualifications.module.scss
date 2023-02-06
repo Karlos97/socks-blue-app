@@ -1,7 +1,21 @@
+@import "../../../assets/styles/mixins.module.scss";
+
 .qualifications {
   height: 80vh;
+  min-height: 70rem;
   padding: 10rem;
   background-color: var(--background-color-darker);
+
+  @include respond(tab-port) {
+    padding: 1rem;
+    min-height: 140rem;
+  }
+
+  .card-wrapper {
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+  }
 
   &-card {
     width: 40rem;
@@ -10,6 +24,10 @@
 
     margin: 0 2rem 1.5rem 0;
     hyphens: auto;
+    @include respond(tab-port) {
+      padding: 1rem;
+      margin: 3rem 1rem;
+    }
     &-icon {
       margin: 0 30px 30px 0;
     }

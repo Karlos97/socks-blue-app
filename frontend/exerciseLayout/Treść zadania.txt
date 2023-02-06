@@ -1,0 +1,15 @@
+Używając frameworka Angular proszę zaprogramować przygotowaną makietę na podstawie projektu graficznego.
+Trzy widoki w jpg odpowiadają trzem podstronom serwisu:
+1. Home
+2. Experience
+3. Services
+
+Przycisk "Comments" powinien na każdej podstronie przenosić na sam dół, gdzie można przeczytać komentarze i dodawać własne.
+Należy obsłużyć moduł komentarzy wykorzystując gotowe API. Dokumentacja zastosowania stronicowania i sortowania znajduję się pod adresem: https://mockapi.io/docs.
+Na stronie głównej zawartość elementów sekcji "WHAT WE DO" i "QUALIFICATION" należy dynamiczne pobrać z gotowego API. Treść artykułów na podstronach może pozostać statyczna.
+Dokumentacja API zajduje się w załączniku (kolekcja Postman).
+
+
+Załączniki:
+Projekt graficzny (Photoshop)
+Dokumentacja API (Postman)

@@ -1,5 +1,7 @@
 .details-section {
   min-height: 100vh;
-  padding: 0 20%;
+  padding: var(--global-section-padding);
   background-color: var(--background-color-darker);
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }

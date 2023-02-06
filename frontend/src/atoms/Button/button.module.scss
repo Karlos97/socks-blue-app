@@ -4,35 +4,40 @@
   color: $text;
 }
 
-a.button {
-  text-decoration: none;
-  width: max-content;
-}
-
 .button {
   display: block;
   line-height: 1;
-  font-size: 14px;
-  font-weight: 400;
-  margin: 0 5px;
+  font-size: var(--font-size-m);
+  font-weight: 500;
+  min-width: 20px;
+  min-height: 20px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.1s;
+
   &:focus {
     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
   }
-}
-
-.button {
-  padding: 8px 30px;
-  &-small {
-    min-width: 20px;
-    min-height: 20px;
-    padding: 4px 7px;
-    vertical-align: middle;
-    text-align: center;
-    display: inline-block;
+  &:active {
+    transform: scale(1.02);
   }
-}
 
-.button {
+  &-small {
+    padding: 10px;
+    margin: 0 2px;
+  }
+  &-medium {
+    padding: 8px 30px;
+  }
+
+  &-text {
+    padding: 0;
+    border: none;
+    background-color: inherit;
+    color: var(--color-white);
+  }
+
   &-outline {
     @include button-color-set(
       var(--color-white),
@@ -61,6 +66,24 @@ a.button {
       @include button-color-set(
         var(--color-blue),
         var(--color-blue),
+        var(--color-white)
+      );
+    }
+    &.disabled {
+      opacity: 0.4;
+      @include button-color-set(#d5d5d5, transparent, #d5d5d5);
+    }
+  }
+  &-dark {
+    @include button-color-set(
+      var(--color-dark),
+      var(--color-dark),
+      var(--color-white)
+    );
+    &:hover {
+      @include button-color-set(
+        var(--color-dark),
+        var(--color-dark),
         var(--color-white)
       );
     }

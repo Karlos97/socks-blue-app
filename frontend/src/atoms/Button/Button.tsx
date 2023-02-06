@@ -1,4 +1,9 @@
-import { ButtonProps, buttonVariantToClassName } from "src/types/atoms/button";
+import { classnames } from "src/helpers/classnames";
+import {
+  ButtonProps,
+  buttonSizeMap,
+  buttonVariantToClassName,
+} from "src/types/atoms/button";
 import classes from "./button.module.scss";
 
 const Button = ({
@@ -8,30 +13,16 @@ const Button = ({
   children,
   onClick,
   type = "button",
-  href = "",
   ...props
 }: ButtonProps) => {
-  if (href) {
-    return (
-      <a
-        className={`${classes["button"]} ${classes[`button-${size}`]} ${
-          disabled ? classes["disabled"] : ""
-        } ${variant ? classes[buttonVariantToClassName[variant]] : ""}`}
-        aria-disabled={disabled}
-        role="button"
-        href={href}
-        onClick={onClick}
-        {...props}
-      >
-        {children}
-      </a>
-    );
-  }
   return (
     <button
-      className={`${classes["button"]} ${classes[`button-${size}`]} ${
-        disabled ? classes["disabled"] : ""
-      } ${variant ? classes[buttonVariantToClassName[variant]] : ""}`}
+      className={classnames({
+        [classes.button]: true,
+        [classes[`button-${buttonSizeMap[size]}`]]: true,
+        [classes[`button-${buttonVariantToClassName[variant]}`]]: true,
+        [classes.disabled]: disabled,
+      })}
       type={type}
       aria-disabled={disabled}
       disabled={disabled}
