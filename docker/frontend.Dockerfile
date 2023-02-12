@@ -22,9 +22,6 @@ RUN npm run build
 FROM arm64v8/nginx:alpine
 WORKDIR /usr/share/nginx/html
 
-ARG PORT
-ENV PORT=$PORT
-
 RUN rm -rf ./*
 
 COPY --from=builder /soft-blue/frontend/build .
