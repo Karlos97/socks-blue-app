@@ -1,12 +1,12 @@
 FROM arm64v8/node:16-alpine AS builder
-WORKDIR /frontend
-COPY /frontend/package*.json ./
+WORKDIR /soft-blue/frontend
+COPY /soft-blue/frontend/package*.json ./
 
 RUN apk add npm
 
 RUN npm install 
 
-COPY ./frontend .
+COPY ./soft-blue/frontend .
 
 ARG BROWSER
 ENV BROWSER=$BROWSER
@@ -22,10 +22,13 @@ RUN npm run build
 FROM arm64v8/nginx:alpine
 WORKDIR /usr/share/nginx/html
 
+ARG PORT
+ENV PORT=$PORT
+
 RUN rm -rf ./*
 
-COPY --from=builder /frontend/build .
-COPY --from=builder /frontend/nginx.conf /etc/nginx/
+COPY --from=builder /soft-blue/frontend/build .
+COPY --from=builder /soft-blue/frontend/nginx.conf /etc/nginx/
 
 EXPOSE $PORT
 ENTRYPOINT ["nginx", "-g", "daemon off;"]

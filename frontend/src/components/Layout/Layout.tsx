@@ -4,6 +4,7 @@ import { List } from "src/atoms/List/List";
 import Text from "src/atoms/Text/Text";
 import Footer from "src/components/Layout/Footer/Footer";
 import Header from "src/components/Layout/Header/Header";
+import { backendPath } from "src/config";
 import Comments from "src/pages/Comments/Comments";
 import { CommentProps } from "src/types/pages/home/comments";
 import classes from "./layout.module.scss";
@@ -52,7 +53,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       },
     };
 
-    return fetch("http://localhost:3001/graphql", {
+    return fetch(backendPath, {
       method: "POST",
       body: JSON.stringify(graphqlQuery),
       headers: {

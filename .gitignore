@@ -1,6 +1,0 @@
-/10-front
-/11-back
-dockerBackendImages/*
-mongo/*
-.env
-auto_backup.sh

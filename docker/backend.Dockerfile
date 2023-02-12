@@ -1,6 +1,6 @@
 FROM arm64v8/node:14-alpine
-WORKDIR /backend
-COPY /backend/package*.json ./
+WORKDIR /soft-blue/backend
+COPY /soft-blue/backend/package*.json ./
 
 RUN apk update && apk add --update --no-cache \
 	python3 \ 
@@ -10,7 +10,7 @@ RUN apk update && apk add --update --no-cache \
 RUN apk add --no-cache make gcc g++ py3-pip 
 RUN apk add npm
 RUN npm install 
-COPY ./backend .
+COPY ./soft-blue/backend .
 
 ARG PORT
 ENV PORT=$PORT

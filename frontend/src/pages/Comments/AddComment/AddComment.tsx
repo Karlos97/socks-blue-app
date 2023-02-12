@@ -4,6 +4,7 @@ import FormRow from "src/atoms/FormRow/FormRow";
 import Input from "src/atoms/Input/Input";
 import Text from "src/atoms/Text/Text";
 import Wrapper from "src/atoms/Wrapper/Wrapper";
+import { backendPath } from "src/config";
 import { useErrors } from "src/helpers/useErrors";
 import classes from "./addComment.module.scss";
 
@@ -76,7 +77,7 @@ const AddComment = ({ fetchPage }: { fetchPage: () => void }) => {
         message,
       },
     };
-    return fetch("http://localhost:3001/graphql", {
+    return fetch(backendPath, {
       method: "POST",
       body: JSON.stringify(graphqlQuery),
       headers: {
