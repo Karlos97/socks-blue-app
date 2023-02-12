@@ -120,7 +120,7 @@ const AddComment = ({ fetchPage }: { fetchPage: () => void }) => {
                   placeholder="Your Name"
                   value={name}
                   type="text"
-                  onChange={(value: string) => setName(value.trim())}
+                  onChange={(value: string) => setName(value.trimStart())}
                 />
               </Wrapper>
             </FormRow>
@@ -144,7 +144,7 @@ const AddComment = ({ fetchPage }: { fetchPage: () => void }) => {
                 placeholder="Your Messages"
                 value={message}
                 type="text"
-                onChange={(value: string) => setMessage(value.trim())}
+                onChange={(value: string) => setMessage(value.trimStart())}
               />
             </Wrapper>
           </FormRow>
