@@ -4,7 +4,7 @@ import { List } from "src/atoms/List/List";
 import Text from "src/atoms/Text/Text";
 import Footer from "src/components/Layout/Footer/Footer";
 import Header from "src/components/Layout/Header/Header";
-import { backendPath } from "src/config";
+import { backendPath, commentsPerPage } from "src/config";
 import Comments from "src/pages/Comments/Comments";
 import { CommentProps } from "src/types/pages/home/comments";
 import classes from "./layout.module.scss";
@@ -12,7 +12,6 @@ import classes from "./layout.module.scss";
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [comments, setComments] = useState<CommentProps[]>([]);
   const [pages, setPages] = useState(0);
-  const commentsPerPage = 4;
 
   const ref = useRef<HTMLDivElement>(null);
   const location = useLocation();
@@ -110,7 +109,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           fetchPage={(page: number, sort: number) => fetchComments(page, sort)}
           comments={comments}
           pages={pages}
-          commentsPerPage={commentsPerPage}
         />
       )}
       <Footer />

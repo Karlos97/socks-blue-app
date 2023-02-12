@@ -2,17 +2,13 @@ import { useState } from "react";
 import Button from "src/atoms/Button/Button";
 import Text from "src/atoms/Text/Text";
 import Wrapper from "src/atoms/Wrapper/Wrapper";
+import { commentsPerPage } from "src/config";
 import { CommentProps, CommentsPageProps } from "src/types/pages/home/comments";
 import AddComment from "./AddComment/AddComment";
 import Comment from "./Comment";
 import classes from "./comments.module.scss";
 
-const Comments = ({
-  fetchPage,
-  comments,
-  pages,
-  commentsPerPage,
-}: CommentsPageProps) => {
+const Comments = ({ fetchPage, comments, pages }: CommentsPageProps) => {
   const sortMap = { asc: 1, desc: -1 };
   const [currentPage, setCurrentPage] = useState(1);
   const [sort, setSort] = useState<keyof typeof sortMap>("asc");

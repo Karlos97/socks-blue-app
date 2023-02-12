@@ -8,5 +8,4 @@ export interface CommentsPageProps {
   fetchPage: (page: number, sort: number) => void;
   comments: CommentProps[];
   pages: number;
-  commentsPerPage: number;
 }
