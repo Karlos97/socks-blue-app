@@ -11,7 +11,7 @@ import classes from "./comments.module.scss";
 const Comments = ({ fetchPage, comments, pages }: CommentsPageProps) => {
   const sortMap = { asc: 1, desc: -1 };
   const [currentPage, setCurrentPage] = useState(1);
-  const [sort, setSort] = useState<keyof typeof sortMap>("asc");
+  const [sort, setSort] = useState<keyof typeof sortMap>("desc");
 
   return (
     <>
